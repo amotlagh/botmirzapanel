@@ -1654,7 +1654,7 @@ if ($text == $datatextbot['text_Add_Balance']) {
     }
 
     if ($datain == "nowpayments") {
-        $price_rate = tronratee();
+        $price_rate = tether();
         $USD = $price_rate['result']['USD'];
         $usdprice = round($user['Processing_value'] / $USD, 2);
         if ($usdprice < 1) {
@@ -1699,7 +1699,7 @@ if ($text == $datatextbot['text_Add_Balance']) {
         sendmessage($from_id, $textnowpayments, $paymentkeyboard, 'HTML');
     }
     if ($datain == "iranpay") {
-        $price_rate = tronratee();
+        $price_rate = tether();
         $trx = $price_rate['result']['TRX'];
         $usd = $price_rate['result']['USD'];
         $trxprice = round($user['Processing_value'] / $trx, 2);
