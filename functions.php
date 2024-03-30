@@ -77,6 +77,13 @@ function generateUUID() {
 
     return $uuid;
 }
+function tether(){
+    $tether = [];
+    $tether['results'] = [];
+    $requests = json_decode(file_get_contents('https://api.nobitex.ir/market/stats?srcCurrency=usdt&dstCurrency=rls'), true);
+    $tether['result']['USD'] = $requests['stats']['usdt-rls']['mark'] / 10;
+    return $tether;
+}
 function tronratee(){
     $tronrate = [];
     $tronrate['results'] = [];
