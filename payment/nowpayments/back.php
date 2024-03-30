@@ -14,7 +14,7 @@ require_once $jdf;
 require_once $botapi;
 $apinowpayments = select("PaySetting", "ValuePay", "NamePay", "apinowpayment","select")['ValuePay'];
 $NP_id = htmlspecialchars($_GET['NP_id'], ENT_QUOTES, 'UTF-8');
-$price_rate = tronratee();
+$price_rate = tether();
 $usd = $price_rate['result']['USD'];    
 if(isset($NP_id)){
 $curl = curl_init();
